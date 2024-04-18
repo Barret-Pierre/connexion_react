@@ -1,0 +1,52 @@
+nav {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 2rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #9f6efe;
+  img {
+    width: 50px;
+  }
+  .brand-name {
+    margin-left: 0.5rem;
+    font-size: larger;
+    font-weight: 700;
+  }
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0;
+  .menu-item {
+    list-style: none;
+    padding-inline: 1rem;
+    .menu-item-content {
+      text-decoration: none;
+      background: none;
+      border: none;
+      color: #202329;
+      padding: 0;
+    }
+    .menu-item-content.active {
+      position: relative;
+      color: #9f6efe;
+    }
+    .underline {
+      height: 4px;
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      background-color: #9f6efe;
+    }
+  }
+}
