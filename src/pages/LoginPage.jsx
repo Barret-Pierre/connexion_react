@@ -8,33 +8,40 @@ LoginPage.propTypes = {
 function LoginPage({ onLogin }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    localStorage.setItem("userEmail", email);
-    onLogin();
+    if (email !== "" && password !== "") {
+      localStorage.setItem("userEmail", email);
+      onLogin();
+    } else {
+      setError("Email and passord must be provide");
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Username:
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-      </label>
-      <label>
-        Password:
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </label>
-      <button type="submit">Login</button>
-    </form>
+    <main>
+      <form onSubmit={handleSubmit}>
+        <h1 className="title">Login</h1>
+        {error && <p className="message danger">{error}</p>}
+        <div className="inputs-section">
+          <input
+            type="email"
+            value={email}
+            placeholder="Email"
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            type="password"
+            value={password}
+            placeholder="Password"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        <button type="submit">Login</button>
+      </form>
+    </main>
   );
 }
 export default LoginPage;

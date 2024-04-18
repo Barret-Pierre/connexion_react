@@ -34,7 +34,7 @@ function App() {
             <Route path="/signup" element={<SignupPage />} />
           </>
         ) : (
-          <Route exact path="/" element={<AcountPage />} />
+          <Route path="/" element={<AcountPage onLogout={() => logout()} />} />
         )}
         <Route path="/*" element={<ErrorPage />} />
       </Routes>

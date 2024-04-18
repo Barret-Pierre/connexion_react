@@ -17,7 +17,7 @@ function Navbar({ onLogout }) {
   return (
     <nav>
       <a href="/" className="brand">
-        <img src="./vite.svg" alt="Brand logo" />
+        <img src="/connexion_react/vite.svg" alt="Brand logo" />
         <span className="brand-name">React Learn</span>
       </a>
       <ul className="menu">
